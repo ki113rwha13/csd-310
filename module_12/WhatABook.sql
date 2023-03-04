@@ -12,16 +12,17 @@ CREATE DATABASE whatabook;
 
 -- drop test user if exists 
 DROP USER IF EXISTS 'whatabook_user'@'localhost';
-
+DROP USER IF EXISTS 'MySQL8IsGreat!';
 -- create whatabook_user and grant them all privileges to the whatabook database 
 CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password, 'MySQL8IsGreat!';
-
+use whatabook;
+ 
 -- grant all privileges to the whatabook database to user whatabook_user on localhost 
-GRANT ALL PRIVILEGES ON whatabook2 TO'whatabook_user'@'localhost';
+GRANT ALL PRIVILEGES ON whatabook TO 'whatabook_user'@'localhost';
 
 -- drop contstraints if they exist
-ALTER TABLE wishlist DROP FOREIGN KEY fk_book;
-ALTER TABLE wishlist DROP FOREIGN KEY fk_user;
+-- ALTER TABLE wishlist DROP FOREIGN KEY fk_book;
+-- ALTER TABLE wishlist DROP FOREIGN KEY fk_user;
 
 -- drop tables if they exist
 DROP TABLE IF EXISTS store;
